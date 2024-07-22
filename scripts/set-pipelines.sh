@@ -39,12 +39,14 @@ set_pipeline() {
 
 set_pipelines() {
 	fly -t "$FLY_TARGET" sync
+  set_pipeline spring-credhub pipeline.yml 3.3.x
   set_pipeline spring-credhub pipeline.yml 3.2.x
   set_pipeline spring-credhub pipeline.yml 3.1.x
   set_pipeline spring-credhub pipeline.yml 3.0.x
   set_pipeline spring-credhub pipeline.yml 2.3.x
   set_pipeline spring-credhub pipeline.yml 2.2.x
 
+  set_pipeline spring-credhub-pr pr-pipeline.yml 3.3.x
   set_pipeline spring-credhub-pr pr-pipeline.yml 3.2.x
   set_pipeline spring-credhub-pr pr-pipeline.yml 3.1.x
   set_pipeline spring-credhub-pr pr-pipeline.yml 3.0.x
